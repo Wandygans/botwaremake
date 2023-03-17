@@ -17,7 +17,7 @@ const axios = require("axios");
 const chalk = require("chalk");
 const figlet = require("figlet");
 const _ = require("lodash");
-const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif'
+const { imageToWebp, videoToWebp, writeExifImg, writeExifVid } = require('./lib/exif')
 const PhoneNumber = require("awesome-phonenumber");
 
 const store = makeInMemoryStore({ logger: pino().child({ level: "silent", stream: "store" }) });
