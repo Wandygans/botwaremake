@@ -14,7 +14,7 @@ const PhoneNumber = require('awesome-phonenumber')
 
 //━━━━━━━━━━━━━━━[ MODULE ]━━━━━━━━━━━━━━━━━//
 
-const { tanggal, wib, wita, wit, getRandom } = require('./lib/function')
+const { tanggal, wib, wita, wit, getRandom, formatp } = require('./lib/function')
 
 //━━━━━━━━━━━━━━━[ CONFIG ]━━━━━━━━━━━━━━━━━//
 
