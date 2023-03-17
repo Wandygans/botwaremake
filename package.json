@@ -8,7 +8,7 @@
     "start": "node index.js"
   },
   "dependencies": {
-    "@adiwajshing/baileys": "npm:baileys@^6.0.7",
+    "@adiwajshing/baileys": "^5.0.0",
     "@adiwajshing/keyed-db": "^0.2.4",
     "@hapi/boom": "^10.0.0",
     "awesome-phonenumber": "^2.64.0",
@@ -17,10 +17,17 @@
     "crypto": "^1.0.1",
     "figlet": "^1.5.2",
     "fs": "0.0.1-security",
+    "jimp": "^0.16.1",
     "lodash": "^4.17.21",
+	"lowdb": "^3.0.0",
+    "mathjs": "^11.6.0",
+    "moment-timezone": "^0.5.41",
+	"mongoose": "^6.2.1",
     "openai": "^3.1.0",
+    "performance-now": "^2.1.0",
     "pino": "^7.0.5",
     "qrcode-terminal": "^0.12.0",
-    "util": "^0.12.4"
+    "util": "^0.12.4",
+	"yargs": "^17.2.1"
   }
 }
