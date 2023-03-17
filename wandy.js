@@ -267,6 +267,21 @@ headerType: 4
 }
 conn.sendMessage(m.chat, buttonMzessage,  { ephemeralExpiration: 604800 }, { quoted: m, mentions: m.key.participant })
 break
+case 'toimage': case 'toimg':
+try {
+m.reply(mess.wait)
+let media = await conn.downloadAndSaveMediaMessage(quoted)
+let ran = await getRandom('.png')
+exec(`ffmpeg -i ${media} ${ran}`, (err) => {
+fs.unlinkSync(media)
+let buffer = fs.readFileSync(ran)
+conn.sendMessage(m.chat, { image: buffer }, { quoted: m})
+fs.unlinkSync(ran)
+})
+} catch (e) {
+m.reply(`Reply sticker dengan caption : ${prefix + command}`)
+}
+break
 case 'ping': case 'botstatus': case 'statusbot': {
 let timestamp = speed()
 let latensi = speed() - timestamp
