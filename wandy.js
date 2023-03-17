@@ -6,6 +6,7 @@ const chalk = require("chalk");
 const ffmpeg = require("fluent-ffmpeg")
 const axios = require('axios')
 const Math_js = require('mathjs')
+const FileType = require('file-type')
 const jimp = require('jimp')
 const os = require('os')
 const { exec, spawn, execSync } = require("child_process");
