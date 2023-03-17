@@ -7,6 +7,7 @@ fetchLatestBaileysVersion,
 makeInMemoryStore,
 jidDecode,
 proto,
+downloadContentFromMessage,
 getContentType,
 } = require("@adiwajshing/baileys");
 const pino = require("pino");
@@ -336,6 +337,18 @@ if (global.db.data) await global.db.write()
         await conn.sendMessage(jid, { sticker: { url: buffer }, ...options }, { quoted })
         return buffer
     }
+	
+	 conn.downloadMediaMessage = async (message) => {
+        let mime = (message.msg || message).mimetype || ''
+        let messageType = message.mtype ? message.mtype.replace(/Message/gi, '') : mime.split('/')[0]
+        const stream = await downloadContentFromMessage(message, messageType)
+        let buffer = Buffer.from([])
+        for await(const chunk of stream) {
+            buffer = Buffer.concat([buffer, chunk])
+	}
+        
+	return buffer
+     } 
 
     /**
      * 
