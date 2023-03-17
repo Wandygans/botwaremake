@@ -14,7 +14,7 @@ const PhoneNumber = require('awesome-phonenumber')
 
 //━━━━━━━━━━━━━━━[ MODULE ]━━━━━━━━━━━━━━━━━//
 
-const { tanggal, wib, wita, wit, getRandom, formatp } = require('./lib/function')
+const { tanggal, wib, wita, wit, formatp } = require('./lib/function')
 
 //━━━━━━━━━━━━━━━[ CONFIG ]━━━━━━━━━━━━━━━━━//
 
@@ -145,6 +145,10 @@ const tanggalT = tanggal()
 
 if (isCmd) {
 axios.get('https://api.countapi.xyz/hit/StealBot/visits').then(({data}) => hit.all = data.value)
+}
+
+function getRandom(ext){
+    return `${Math.floor(Math.random() * 10000)}${ext}`
 }
 
 function randomkontol(){
