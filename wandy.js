@@ -216,7 +216,7 @@ anuy = `
 
 ──⭓ *BOT INFORMATION*
 👑 Creator : WandyGans
-🤖 Bot Name : Steal - Bot
+🤖 Bot Name : Zero - Bot
 📍 Prefix : 「 Multi Prefix 」
 🌝 Hit Today : ${hit_today.length}
 🌎 Hit All : ${jumlahCommand}
@@ -267,7 +267,7 @@ headerType: 4
 }
 conn.sendMessage(m.chat, buttonMzessage,  { ephemeralExpiration: 604800 }, { quoted: m, mentions: m.key.participant })
 break
-		case 'ping': case 'botstatus': case 'statusbot': {
+case 'ping': case 'botstatus': case 'statusbot': {
 let timestamp = speed()
 let latensi = speed() - timestamp
 let all = require('util').inspect(hit.all)
@@ -287,8 +287,26 @@ ${cpus.map((cpu, i) => `${i + 1}. ${cpu.model.trim()} (${cpu.speed} MHZ)\n${Obje
 `.trim()
 m.reply(respon)
 }
-break
 
+break
+case 'sticker': case 's': case 'stickergif': case 'sgif': case 'stiker': {
+if (!quoted) throw `Balas Video/Image Dengan Caption ${prefix + command}`
+m.reply(mess.wait)
+if (/image/.test(mime)) {
+let media = await quoted.download()
+let encmedia = await conn.sendImageAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+await fs.unlinkSync(encmedia)
+} else if (/video/.test(mime)) {
+if ((quoted.msg || quoted).seconds > 11) return m.reply('Maksimal 10 detik!')
+let media = await quoted.download()
+let encmedia = await conn.sendVideoAsSticker(m.chat, media, m, { packname: global.packname, author: global.author })
+await fs.unlinkSync(encmedia)
+} else {
+throw `Kirim Gambar/Video Dengan Caption ${prefix + command}\nDurasi Video 1-9 Detik`
+}
+}
+break
+		
 default:
 if (budy.includes('>')) {
 if (!isCreator) return 
