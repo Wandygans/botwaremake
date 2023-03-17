@@ -283,7 +283,7 @@ conn.sendMessage(m.chat, { image: buffer }, { quoted: m})
 fs.unlinkSync(ran)
 })
 } catch (e) {
-m.reply(`Reply sticker dengan caption : ${prefix + command}`)
+m.reply(e)
 }
 break
 case 'ping': case 'botstatus': case 'statusbot': {
