@@ -10,6 +10,7 @@ proto,
 getContentType,
 } = require("@adiwajshing/baileys");
 const pino = require("pino");
+const yargs = require('yargs/yargs')
 const { Boom } = require("@hapi/boom");
 const fs = require("fs");
 const axios = require("axios");
