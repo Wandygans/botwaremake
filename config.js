@@ -12,8 +12,8 @@ global.thumbnailUrl = [
 
 global.fake = 'Steal-Bot'
 global.sesiSayaMasbro = "wandy";
-global.packname = 'Sticker.ly'
-global.author = '\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n'
+global.packname = 'Zero-Bot'
+global.author = '\n\nCreator bot: WandyGans\n082125039170'
 global.prefa = ['','!','.','🐦','🐤','🗿']
 global.sp = '⭔'
 global.mess = {
