@@ -6,6 +6,7 @@ const chalk = require("chalk");
 const axios = require('axios')
 const Math_js = require('mathjs')
 const jimp = require('jimp')
+const os = require('os')
 const { exec, spawn, execSync } = require("child_process");
 const speed = require('performance-now')
 const moment = require('moment-timezone')
