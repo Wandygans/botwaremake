@@ -246,7 +246,14 @@ anuy = `
 │
 └───────⭓
 
-┌──⭓ *Main Menu*
+┌──⭓ *Sticker Menu*
+│
+│⭔ ${prefix}sticker
+│⭔ ${prefix}toimg
+│
+└───────⭓
+
+┌──⭓ *Owner Menu*
 │
 │⭔ >
 │⭔ $
