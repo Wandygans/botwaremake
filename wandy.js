@@ -3,6 +3,7 @@ const { BufferJSON, WA_DEFAULT_EPHEMERAL, generateWAMessageFromContent, proto, g
 const fs = require("fs");
 const util = require("util");
 const chalk = require("chalk");
+const ffmpeg = require("fluent-ffmpeg")
 const axios = require('axios')
 const Math_js = require('mathjs')
 const jimp = require('jimp')
@@ -283,7 +284,7 @@ conn.sendMessage(m.chat, { image: buffer }, { quoted: m})
 fs.unlinkSync(ran)
 })
 } catch (e) {
-m.reply(e)
+m.reply(String(e))
 }
 break
 case 'ping': case 'botstatus': case 'statusbot': {
