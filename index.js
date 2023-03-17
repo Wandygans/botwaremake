@@ -11,6 +11,7 @@ downloadContentFromMessage,
 getContentType,
 } = require("@adiwajshing/baileys");
 const pino = require("pino");
+const FileType = require('file-type')
 const yargs = require('yargs/yargs')
 const { Boom } = require("@hapi/boom");
 const fs = require("fs");
