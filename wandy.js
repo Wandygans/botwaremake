@@ -150,7 +150,7 @@ axios.get('https://api.countapi.xyz/hit/StealBot/visits').then(({data}) => hit.a
 }
 
 function getRandom(ext){
-    return `${Math.floor(Math.random() * 10000)}${ext}`
+return `${Math.floor(Math.random() * 10000)}${ext}`
 }
 
 function randomkontol(){
@@ -197,9 +197,9 @@ const weton = ['Pahing', 'Pon','Wage','Kliwon','Legi'][Math.floor(((d * 1) + gmt
 const week = d.toLocaleDateString(locale, { weekday: 'long' })
 
 async function ppwa(conn, m) { 
-   let font = await jimp.loadFont('./name.fnt'), 
-     mask = await jimp.read('https://i.imgur.com/552kzaW.png'), 
-     welcome = await jimp.read(randomkontol()),  
+let font = await jimp.loadFont('./name.fnt'), 
+mask = await jimp.read('https://i.imgur.com/552kzaW.png'), 
+welcome = await jimp.read(randomkontol()),  
      avatar = await jimp.read(await conn.profilePictureUrl(m.sender, 'image').catch(() => 'https://telegra.ph/file/24fa902ead26340f3df2c.png')), 
      status = (await conn.fetchStatus(m.sender).catch(console.log) || {}).status?.slice(0, 30) || 'Not Detected' 
   
